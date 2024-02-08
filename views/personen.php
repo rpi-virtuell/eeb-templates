@@ -1,9 +1,11 @@
 <?php
-include EEB_TEMPLATE_PLUGIN_DIR.'classes/person-helper-class.php';
+
 function display_person_view()
 {
+    include EEB_TEMPLATE_PLUGIN_DIR.'classes/person-helper-class.php';
     $arbeitsbereiche = get_terms(['taxonomy' => 'arbeitsbereich']);
     ob_start()
+
     ?>
 
     <div class="eeb-person-view-container">

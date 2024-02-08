@@ -1,6 +1,6 @@
 <?php
 /**
-Plugin Name: RPI Export-Import
+Plugin Name: EEB Templates
 Plugin URI: https://github.com/rpi-virtuell/eeb-templates
 Description: Stellt Views zur Verfügung, die unter anderem auch von FacetWP genutzt werden
 Version: 1.0
