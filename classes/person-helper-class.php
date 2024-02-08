@@ -9,7 +9,7 @@ class PersonHelperClass
         <div class="eeb-single-person">
             <div class="eeb-single-person-image">
                 <?php
-                get_the_post_thumbnail($person->ID)
+                echo get_the_post_thumbnail($person->ID)
                 ?>
             </div>
             <div class="eeb-single-person-credentials">
@@ -17,29 +17,35 @@ class PersonHelperClass
                 $person_terms = wp_get_post_terms($person->ID, 'arbeitsbereich', array('fields' => 'names'));
                 if (in_array('vertretung', $person_terms) && $person_vertretung = get_post_meta($person->ID, 'vertretungsfunktion', true)) {
                     ?><b> <?php echo $person_vertretung ?></b><?php
+                    ?>
+                    <br>
+                    <?php
                 }
                 ?>
-                <br>
                 <strong><?php echo $person->post_title; ?></strong><br>
                 <?php
                 if ($person_funktion = get_post_meta($person->ID, 'funktion', true)) {
                     echo $person_funktion;
+                    ?>
+                    <br>
+                    <?php
                 }
-                ?><br>
-                <?php
                 if ($person_organisation = get_post_meta($person->ID, 'organisation', true)) {
                     echo $person_organisation;
-                }
-                ?><br>
+                    ?><br>
 
-                <?php
+                    <?php
+                }
+
                 if ($person_email = get_post_meta($person->ID, 'email', true)) {
                     ?>
                     <a
                     href="mailto:<?php echo $person_email ?>"><?php echo $person_email; ?></a><?php
-                }
-                ?><br>
 
+                    ?><br>
+                    <?php
+                }
+                ?>
             </div>
         </div>
         <?php

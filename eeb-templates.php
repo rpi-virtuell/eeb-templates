@@ -13,7 +13,7 @@ include (EEB_TEMPLATE_PLUGIN_DIR. '/views/personen.php');
 
 
 function run_eeb_plugin(){
-    wp_enqueue_style('person-view', EEB_TEMPLATE_PLUGIN_DIR.'/assets/css/',array(), '1.0');
+    wp_enqueue_style('person-view', plugin_dir_url(__FILE__).'/assets/css/person-view.css',array(), '1.0');
     add_shortcode('eeb-person-view','display_person_view' );
 
 }
