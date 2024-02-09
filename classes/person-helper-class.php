@@ -3,7 +3,7 @@
 class PersonHelperClass
 {
 
-    static function display_person_container(WP_Post $person)
+    static function display_person_container(WP_Post $person, $show_funktion = false)
     {
         ?>
         <div class="eeb-single-person">
@@ -14,8 +14,8 @@ class PersonHelperClass
             </div>
             <div class="eeb-single-person-credentials">
                 <?php
-                $person_terms = wp_get_post_terms($person->ID, 'arbeitsbereich', array('fields' => 'names'));
-                if (in_array('vertretung', $person_terms) && $person_vertretung = get_post_meta($person->ID, 'vertretungsfunktion', true)) {
+                $person_vertretung = get_post_meta($person->ID, 'vertretungsfunktion', true);
+                if (!empty($person_vertretung) && $show_funktion) {
                     ?><b> <?php echo $person_vertretung ?></b><?php
                     ?>
                     <br>
