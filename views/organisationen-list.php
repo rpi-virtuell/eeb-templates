@@ -12,7 +12,7 @@ ob_start();
                 ?>
                 <div>
                     <h3><?php echo $bereich->name ?></h3>
-                    <div class="eeb-berich-list" id="eeb-bereich-<?php echo $bereich->slug ?> ">
+                    <div class="eeb-bereich-list" id="eeb-bereich-<?php echo $bereich->slug ?> ">
                         <?php
                         while (have_posts()):
                             the_post();

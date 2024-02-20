@@ -1,6 +1,6 @@
 <?php
 
-class PersonHelperClass
+class PersonHelper
 {
 
     static function display_person_container(WP_Post $person, $show_funktion = false)

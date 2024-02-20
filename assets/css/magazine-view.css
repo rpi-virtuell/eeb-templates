@@ -1,0 +1,39 @@
+.eeb-article-grid {
+    display: grid;
+    grid-gap: 15px;
+
+}
+
+.eeb-single-article {
+    background-color: white;
+    box-shadow: 5px 5px 5px lightgrey;
+    min-height: 300px;
+    overflow: clip;
+}
+
+.eeb-article-default-thumbnail {
+    padding: 10px 30px;
+    font-weight: lighter;
+    font-size: xx-large;
+    min-height: 100px;
+}
+
+.eeb-article-thumbnail img {
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.eeb-article-headline {
+    padding: 25px 15px;
+}
+
+.eeb-article-excerpt {
+    padding: 25px 15px;
+}
+
+@media screen and (min-width: 640px) {
+    .eeb-article-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

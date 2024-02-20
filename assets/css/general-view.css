@@ -1,0 +1,35 @@
+.eeb-logo-postfix {
+    width: 40px;
+    height: 30px;
+    margin-top: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.eeb-magazin-button{
+    width: 100px;
+    border-radius: 0 0 15px 15px !important;
+    position: relative !important;
+    left: 70%;
+}
+.eeb-magazin-button:hover, .eeb-magazin-button.button-active{
+    background-color: #a5a728;
+
+}
+
+.eeb-current-publication-view{
+    display: grid;
+    grid-gap: 15px;
+    justify-content: space-around;
+}
+
+
+@media screen and (min-width: 640px) {
+    .eeb-organisation-list{
+        grid-template-columns: 50% 50%;
+
+    }
+    .eeb-current-publication-view{
+        grid-template-columns: 30% 60%;
+    }
+}

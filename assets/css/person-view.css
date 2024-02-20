@@ -2,6 +2,8 @@
 .eeb-term-container {
     display: grid;
     margin: 20px 0;
+    grid-template-areas: 'headline''description' 'person' ;
+    grid-template-columns: minmax(0, 1fr);
 }
 .eeb-term-container h3{
     grid-area: headline;
@@ -14,14 +16,15 @@
 }
 
 .eeb-single-person {
-    margin: 10px;
+    margin: 20px 10px;
+    display: grid;
+    justify-content: left;
 }
 
 .eeb-single-person .eeb-single-person-image {
     height: 150px;
-    width: 150px;
-    padding-right: 20px;
-    float: left;
+    width: 130px;
+    margin: auto;
 }
 
 
@@ -42,5 +45,10 @@
     .eeb-term-container{
         grid-template-areas: 'headline headline' 'person description';
         grid-template-columns: 70% 30%;
+    }
+    .eeb-single-person {
+        grid-template-columns: auto auto;
+        grid-gap: 30px;
+
     }
 }

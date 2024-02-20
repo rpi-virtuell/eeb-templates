@@ -2,7 +2,6 @@
 
 function display_person_view()
 {
-    include EEB_TEMPLATE_PLUGIN_DIR . 'classes/person-helper-class.php';
     $arbeitsbereiche = get_terms(['taxonomy' => 'arbeitsbereich', 'order' => 'DESC',]);
     $arbeitsbereich_whitelist = [
         'funktionen',
@@ -33,7 +32,7 @@ function display_person_view()
                     ]);
                     foreach ($personen as $person) {
                         $show_funktion = in_array($arbeitsbereich->slug, $arbeitsbereich_whitelist);
-                        PersonHelperClass::display_person_container($person,$show_funktion);
+                        PersonHelper::display_person_container($person,$show_funktion);
                     }
                     ?>
                 </div>
