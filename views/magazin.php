@@ -127,3 +127,23 @@ function display_free_articles_of_publication()
     }
     return '';
 }
+
+function display_older_publications()
+{
+    $current_magazine = get_posts(['numberposts' => 1, 'post_type' => 'ausgabe']);
+    $current_magazine = reset($current_magazine);
+
+    $older_magazines = get_posts(
+        [
+            'numberposts' => -1,
+            'posts_per_page' => 4,
+            'paged' => 1,
+            'post_type' => 'ausgabe',
+            'exclude' => [$current_magazine->ID]
+        ]);
+    foreach ($older_magazines as $older_magazine) {
+        if (is_a($older_magazine, 'WP_Post')) {
+//TODO WIP
+        }
+    }
+}

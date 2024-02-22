@@ -44,7 +44,7 @@ class Magazin_Helper
                                     <?php
                                     $link = get_post_meta($article->ID, 'waxmann_link', true);
                                     ?>
-                                    <a href="<?php echo $link ?>" target="_blank" class="slide-image">
+                                    <a href="<?php echo $link ?>"target="_blank" rel="noopener noreferrer" class="slide-image">
                                         <?php $color = rand(0, 5) ?>
                                         <div class="carousel-content-container"
                                              style="background-color: <?php echo $color_pallet[$color]['background'] ?>; color: <?php echo $color_pallet[$color]['font'] ?>">

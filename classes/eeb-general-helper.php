@@ -33,21 +33,6 @@ class Eeb_General_Helper
         }
     }
 
-    static function get_eeb_sidebar()
-    {
-        switch (get_post_type()) {
-            case 'news':
-                ob_start();
-
-                return ob_get_clean();
-            case 'magazin':
-                ob_start();
-
-                return ob_get_clean();
-            default:
-                return '';
-        }
-    }
 
 
 }

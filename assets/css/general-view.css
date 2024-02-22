@@ -7,10 +7,11 @@
 }
 
 .eeb-magazin-button{
-    width: 100px;
+    width: 120px;
     border-radius: 0 0 15px 15px !important;
     position: relative !important;
     left: 70%;
+    font-weight: bold !important;
 }
 .eeb-magazin-button:hover, .eeb-magazin-button.button-active{
     background-color: #a5a728;
@@ -19,8 +20,8 @@
 
 .eeb-current-publication-view{
     display: grid;
-    grid-gap: 15px;
-    justify-content: space-around;
+    grid-gap: 40px;
+    justify-content: left;
 }
 
 

@@ -20,6 +20,7 @@ include EEB_TEMPLATE_PLUGIN_DIR . 'classes/magazin-helper.php';
 
 function run_eeb_plugin()
 {
+    //TODO : Add versioning of styles
     wp_enqueue_style('eeb-general-view', plugin_dir_url(__FILE__) . '/assets/css/general-view.css', array(), '1.0');
     wp_enqueue_style('eeb-person-view', plugin_dir_url(__FILE__) . '/assets/css/person-view.css', array(), '1.0');
     wp_enqueue_style('eeb-magazine-view', plugin_dir_url(__FILE__) . '/assets/css/magazine-view.css', array(), '1.0');
@@ -27,20 +28,36 @@ function run_eeb_plugin()
     wp_enqueue_style('eeb-carousel', plugin_dir_url(__FILE__) . '/assets/css/carousel.css', array(), '1.0');
 
 
+    //Personen Views
     add_shortcode('eeb-person-view', 'display_person_view');
     add_shortcode('eeb-ansprechpartner-view', 'display_ansprechpartner');
 
-    //Magazine view
+    //Magazine Views
     add_shortcode('eeb-aktuelle-ausgabe', 'display_current_publication');
     add_shortcode('eeb-freie-artikel-der-ausgabe', 'display_free_articles_of_publication');
     add_shortcode('eeb-inhaltsverzeichnis', 'display_magazin_iframe');
+    add_shortcode('eeb-vergangene-ausgaben', 'display_older_publications');
 
 
+//Blocksy Hooks
 
-    add_action('blocksy:single:content:bottom', array('Eeb_General_Helper', 'display_logo_postfix'));
-    add_action('blocksy:header:after', array('Eeb_General_Helper', 'display_magazin_button'));
-//    add_action('blocksy:hero:title:after', 'display_single_magazin_view'); TODO deprecated delete if not needed
-    add_action('save_post','alter_ausgabe_content',10, 3);
+//TODO  add check has_action('blocksy:single:content:bottom') && has_action('blocksy:header:after')
+    if (true) {
+        add_action('blocksy:single:content:bottom', array('Eeb_General_Helper', 'display_logo_postfix'));
+        add_action('blocksy:header:after', array('Eeb_General_Helper', 'display_magazin_button'));
+
+    } else {
+        add_action('notice-error', 'error_blocksy_hooks_missing');
+    }
+    add_action('save_post', 'alter_ausgabe_content', 10, 3);
+}
+
+function error_blocksy_hooks_missing()
+{
+    ?>
+    <strong> EEB Plugin ERROR: </strong>
+    <p>Blocksy hooks not found this may cause some features to not work properly</p>
+    <?php
 }
 
 run_eeb_plugin();
