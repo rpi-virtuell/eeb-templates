@@ -136,14 +136,11 @@ function display_older_publications()
     $older_magazines = get_posts(
         [
             'numberposts' => -1,
-            'posts_per_page' => 4,
-            'paged' => 1,
             'post_type' => 'ausgabe',
             'exclude' => [$current_magazine->ID]
         ]);
-    foreach ($older_magazines as $older_magazine) {
-        if (is_a($older_magazine, 'WP_Post')) {
-//TODO WIP
-        }
-    }
+    ob_start();
+    Magazin_Helper::display_older_publications_carousel($older_magazines);
+    return ob_get_clean();
+
 }

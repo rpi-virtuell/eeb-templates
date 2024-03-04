@@ -32,6 +32,11 @@
     padding: 25px 15px;
 }
 
+.eeb-older-publications{
+    background-color: white;
+    padding: 10px 30px;
+}
+
 @media screen and (min-width: 640px) {
     .eeb-article-grid {
         grid-template-columns: 1fr 1fr;

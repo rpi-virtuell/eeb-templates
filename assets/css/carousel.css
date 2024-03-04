@@ -16,6 +16,7 @@ ul.slides {
     list-style: none;
 }
 
+
 .slides * {
     user-select: none;
     -ms-user-select: none;
@@ -34,17 +35,26 @@ ul.slides input {
     display: block;
 }
 
-.slide-image {
+.slide-image, .slide-grid {
     display: none;
-    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     opacity: 0;
     transition: all .7s ease-in-out;
 }
+.slide-image{
+    position: absolute;
+}
+.slide-grid{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
 
-.slide-image a ,.slide-image div {
+
+
+.slide-image a, .slide-image div ,.slide-grid a, .slide-grid div {
     width: auto;
     min-width: 100%;
     height: 100%;
@@ -59,7 +69,7 @@ ul.slides input {
     font-size: 100px;
     /* line-height: 600px; */
     color: #00365f;
-    bottom: 20%;
+    bottom: 108px;
     /* padding: 45px; */
     /* margin: 20px; */
     /* height: 45px; */
@@ -121,22 +131,42 @@ input:checked + .slide-container .slide-image {
     transform: scale(1);
     transition: opacity 1s ease-in-out;
 }
+input:checked + .slide-container .slide-grid {
+    opacity: 1;
+    display: grid;
+    transform: scale(1);
+    transition: opacity 1s ease-in-out;
+}
 
 input:checked + .slide-container .carousel-controls label {
     display: block;
 }
 
-input#img-0:checked ~ .carousel-dots label#img-dot-0,
-input#img-1:checked ~ .carousel-dots label#img-dot-1,
-input#img-2:checked ~ .carousel-dots label#img-dot-2,
-input#img-3:checked ~ .carousel-dots label#img-dot-3,
-input#img-4:checked ~ .carousel-dots label#img-dot-4,
-input#img-5:checked ~ .carousel-dots label#img-dot-5,
-input#img-6:checked ~ .carousel-dots label#img-dot-6 {
+input#free-article-0:checked ~ .carousel-dots label#free-article-dot-0,
+input#free-article-1:checked ~ .carousel-dots label#free-article-dot-1,
+input#free-article-2:checked ~ .carousel-dots label#free-article-dot-2,
+input#free-article-3:checked ~ .carousel-dots label#free-article-dot-3,
+input#free-article-4:checked ~ .carousel-dots label#free-article-dot-4,
+input#free-article-5:checked ~ .carousel-dots label#free-article-dot-5,
+input#free-article-6:checked ~ .carousel-dots label#free-article-dot-6,
+input#older-publication-0:checked ~ .carousel-dots label#older-publication-dot-0,
+input#older-publication-1:checked ~ .carousel-dots label#older-publication-dot-1,
+input#older-publication-2:checked ~ .carousel-dots label#older-publication-dot-2,
+input#older-publication-3:checked ~ .carousel-dots label#older-publication-dot-3,
+input#older-publication-4:checked ~ .carousel-dots label#older-publication-dot-4,
+input#older-publication-5:checked ~ .carousel-dots label#older-publication-dot-5,
+input#older-publication-6:checked ~ .carousel-dots label#older-publication-dot-6 {
     opacity: 1;
 }
 
 
 input:checked + .slide-container .nav label {
     display: block;
+}
+
+/*
+Special Rule for Older Publications
+ */
+.eeb-older-publications .slides{
+    height: fit-content !important;
 }
