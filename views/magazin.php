@@ -32,12 +32,10 @@ function alter_ausgabe_content($post_id, $post, $update)
         <!-- /wp:column -->
 
         <!-- wp:column {"width":"66.66%"} -->
-        <div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:heading {"level":4} -->
-            <h4 class="wp-block-heading">Editorial</h4>
-            <!-- /wp:heading -->
+        <div class="wp-block-column" style="flex-basis:66.66%">
 
             <!-- wp:paragraph -->
-            <p><?php echo $editorial ?>></p>
+            <p><?php echo $editorial ?></p>
             <!-- /wp:paragraph -->
 
         </div>

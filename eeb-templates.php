@@ -40,6 +40,8 @@ function run_eeb_plugin()
     foreach ($enqueues['styles'] as $style_handle => $style_path) {
         wp_enqueue_style($style_handle, plugin_dir_url(__FILE__) . $style_path, [], $plugin_version . '.' . filemtime(__DIR__ . $style_path));
     }
+    //News Views
+    add_shortcode('eeb-thumbnail-fallback', array('Eeb_General_Helper', 'display_thumbnail_fallback'));
     //Personen Views
     add_shortcode('eeb-person-view', 'display_person_view');
     add_shortcode('eeb-ansprechpartner-view', 'display_ansprechpartner');
@@ -49,6 +51,7 @@ function run_eeb_plugin()
     add_shortcode('eeb-freie-artikel-der-ausgabe', 'display_free_articles_of_publication');
     add_shortcode('eeb-inhaltsverzeichnis', 'display_magazin_iframe');
     add_shortcode('eeb-vergangene-ausgaben', 'display_older_publications');
+    add_shortcode('eeb-zoom-weiterleitung', array('Eeb_General_Helper', 'forward_to_zoom_link'));
 
     //Blocksy Hooks
     add_action('blocksy:single:content:bottom', array('Eeb_General_Helper', 'display_logo_postfix'));
