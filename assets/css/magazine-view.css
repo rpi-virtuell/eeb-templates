@@ -18,6 +18,14 @@
     min-height: 100px;
 }
 
+.eeb-default-thumbnail {
+    padding: 20px;
+    font-weight: lighter;
+    font-size: 1.756vw;
+    display: flex;
+    flex-flow: column;
+}
+
 .eeb-article-thumbnail img {
     height: 150px;
     width: 100%;
@@ -32,7 +40,7 @@
     padding: 25px 15px;
 }
 
-.eeb-older-publications{
+.eeb-older-publications {
     background-color: white;
     padding: 10px 30px;
 }

@@ -6,31 +6,41 @@
     background-position: center;
 }
 
-.eeb-magazin-button{
+.eeb-magazin-button {
     width: 120px;
     border-radius: 0 0 15px 15px !important;
     position: relative !important;
     left: 70%;
     font-weight: bold !important;
 }
-.eeb-magazin-button:hover, .eeb-magazin-button.button-active{
+
+.eeb-magazin-button:hover, .eeb-magazin-button.button-active {
     background-color: #a5a728;
 
 }
 
-.eeb-current-publication-view{
+.eeb-current-publication-view {
     display: grid;
     grid-gap: 40px;
     justify-content: left;
 }
 
+/*
+USED IN CUSTOMIZER
+ */
+
+.eeb-image-contain img {
+    object-fit: contain !important;
+}
+
 
 @media screen and (min-width: 640px) {
-    .eeb-organisation-list{
+    .eeb-organisation-list {
         grid-template-columns: 50% 50%;
 
     }
-    .eeb-current-publication-view{
+
+    .eeb-current-publication-view {
         grid-template-columns: 30% 60%;
     }
 }

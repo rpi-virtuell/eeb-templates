@@ -68,7 +68,7 @@ class Eeb_General_Helper
             ob_start();
             ?>
             <a href="<?php echo $link ?>">
-                <div class="eeb-article-default-thumbnail"
+                <div class="eeb-default-thumbnail"
                      style="background-color: <?php echo $color_pallet[$color]['background'] ?>; color: <?php echo $color_pallet[$color]['font'] ?>">
                     <span><?php echo $fill_text ?></span>
                 </div>
