@@ -27,7 +27,7 @@ class Eeb_General_Helper
             ?>
             <a href="<?php echo get_post_permalink($current_magazine->ID) ?>"
                class="eeb-magazin-button button <?php echo get_the_ID() === $current_magazine->ID ? 'button-active' : '' ?>">
-                FORUM
+                forum
             </a>
             <?php
             echo ob_get_clean();
