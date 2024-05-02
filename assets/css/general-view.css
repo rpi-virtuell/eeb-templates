@@ -7,10 +7,11 @@
 }
 
 .eeb-magazin-button {
-    width: 120px;
+
+    width: 170px;
     border-radius: 0 0 15px 15px !important;
     position: relative !important;
-    left: 70%;
+    left: 55%;
     font-weight: bold !important;
 }
 
@@ -42,5 +43,10 @@ USED IN CUSTOMIZER
 
     .eeb-current-publication-view {
         grid-template-columns: 30% 60%;
+    }
+    .eeb-magazin-button{
+
+        width: 240px;
+        left: 70%;
     }
 }

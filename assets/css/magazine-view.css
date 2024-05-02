@@ -20,7 +20,7 @@
 
 .eeb-default-thumbnail {
     padding: 20px;
-    font-weight: lighter;
+    font-weight: normal;
     font-size: 1.756vw;
     display: flex;
     flex-flow: column;

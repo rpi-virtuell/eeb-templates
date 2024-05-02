@@ -27,7 +27,7 @@ class Eeb_General_Helper
             ?>
             <a href="<?php echo get_post_permalink($current_magazine->ID) ?>"
                class="eeb-magazin-button button <?php echo get_the_ID() === $current_magazine->ID ? 'button-active' : '' ?>">
-                forum
+                forum erwachsenenbildung
             </a>
             <?php
             echo ob_get_clean();
@@ -56,13 +56,13 @@ class Eeb_General_Helper
         if (empty($thumbnail)) {
             $color_pallet = [
                 ['background' => '#5e7fa7', 'font' => '#fff'],
-                ['background' => '#84b0da', 'font' => '#00365f'],
-                ['background' => '#ced1dd', 'font' => '#00365f'],
+//                ['background' => '#84b0da', 'font' => '#00365f'],
+//                ['background' => '#ced1dd', 'font' => '#00365f'],
                 ['background' => '#704e8d', 'font' => '#fff'],
                 ['background' => '#707400', 'font' => '#fff'],
                 ['background' => '#f4e72f', 'font' => '#00365f'],
             ];
-            $color = rand(0, 5);
+            $color = rand(0, count($color_pallet)-1);
             $link = get_the_permalink(get_the_ID());
             $fill_text = get_post_meta(get_the_ID(), 'bild_text', true);
             ob_start();
