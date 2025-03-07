@@ -24,6 +24,8 @@ function display_person_view()
                     $personen = get_posts([
                         'numberposts' => -1,
                         'post_type' => 'personen',
+                        'orderby' => 'title',
+                        'order' => 'ASC',
                         'tax_query' => array(array(
                             'taxonomy' => 'arbeitsbereich',
                             'field' => 'slug',
